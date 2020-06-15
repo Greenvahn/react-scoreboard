@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Header from './Header'
 import Player from './Player'
 
@@ -49,8 +49,8 @@ class App extends Component {
     return (
       <div className="scoreboard">
         <Header 
-          title="Scoreboard" 
-          totalPlayers={this.state.players.length} 
+          title="Scoreboard"
+          players={this.state.players} 
         />
   
         {/* Players list */}
