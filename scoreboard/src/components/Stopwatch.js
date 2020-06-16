@@ -9,11 +9,11 @@ class Stopwatch extends Component {
     // Lifecycle method built in react
     // It triggers just after the component has been mounted into the dom    
     componentDidMount () {
-        
+        this.intervalID = setInterval(() => this.tick(),100);
     }
       
     tick = () => {
-
+        console.log('Ticking....!')
     }
 
     handleStopwatch = () => {
