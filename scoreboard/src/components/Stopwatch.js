@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Stopwatch extends Component {
 
@@ -6,6 +7,13 @@ class Stopwatch extends Component {
         isRunning: false,
         elapsedTime: 0,
         previousTime: 0
+    }
+
+    
+    static propTypes = {
+        isRunning : PropTypes.bool,
+        elapsedTime : PropTypes.number,
+        previousTime : PropTypes.number
     }
 
     // Lifecycle method built in react
