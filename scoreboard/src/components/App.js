@@ -78,17 +78,18 @@ class App extends Component {
 
   render() {
     return (
-      <Provider value={this.state}>
+      <Provider value={{
+        players: this.state.players,
+        actions: {
+          changeScore: this.handleScoreChange,
+          removePlayer: this.handleRemovePlayer,
+          addPlayer: this.handleAddPlayer
+        }
+      }}>
       <div className="scoreboard">
         <Header />
-
-
-        <PlayerList 
-            changeScore={this.handleScoreChange}
-            removePlayer={this.handleRemovePlayer}   
-        />
-
-        <AddPlayerForm addPlayer={this.handleAddPlayer} />
+        <PlayerList />
+        <AddPlayerForm />
       </div>
       </Provider>
     );
