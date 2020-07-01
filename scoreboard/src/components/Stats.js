@@ -7,8 +7,8 @@ const Stats = () => {
         <Consumer>
             {
                 context => {
-                    const totalPlayers = context.length;
-                    const totalPoints = context.reduce((total, player) => {
+                    const totalPlayers = context.players.length;
+                    const totalPoints = context.players.reduce((total, player) => {
                         return total + player.score;
                     }, 0);
 
@@ -22,6 +22,10 @@ const Stats = () => {
                                 <tr>
                                     <td>Total Points:</td>
                                     <td>{totalPoints}</td>
+                                </tr>
+                                <tr>
+                                    <td>High Score:</td>
+                                    <td>{context.highScore}</td>
                                 </tr>
                             </tbody>
                         </table>
