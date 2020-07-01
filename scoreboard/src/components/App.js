@@ -80,10 +80,7 @@ class App extends Component {
     return (
       <Provider value={this.state.players}>
       <div className="scoreboard">
-        <Header
-          players={this.state.players}
-          highscore={this.state.highScore}
-        />
+        <Header />
 
         {/* Players list */}
         {this.state.players.map((player, index) =>

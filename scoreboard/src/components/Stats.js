@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Consumer } from './Context';
 
 const Stats = () => {
@@ -31,10 +30,6 @@ const Stats = () => {
             }
         </Consumer>
     )
-}
-
-Stats.propTypes = {
-    players: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Stats;
