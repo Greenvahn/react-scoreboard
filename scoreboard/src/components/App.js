@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import Header from './Header'
-import Player from './Player'
-import AddPlayerForm from './AddPlayerForm'
+import React, { Component } from 'react';
+import { Provider } from './Context';
+import Header from './Header';
+import Player from './Player';
+import AddPlayerForm from './AddPlayerForm';
 
 class App extends Component {
   state = {
@@ -77,6 +78,7 @@ class App extends Component {
 
   render() {
     return (
+      <Provider value={this.state.players}>
       <div className="scoreboard">
         <Header
           players={this.state.players}
@@ -99,6 +101,7 @@ class App extends Component {
 
         <AddPlayerForm addPlayer={this.handleAddPlayer} />
       </div>
+      </Provider>
     );
   }
 }
