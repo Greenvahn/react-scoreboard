@@ -70,7 +70,7 @@ export class Provider extends Component {
     let maxScore = 0
     players.forEach(el => {
       el.score >= maxScore &&  el.score > 0 ? maxScore = el.score : maxScore;
-    });
+    }); 
     return maxScore;
     console.log("reviewScore", maxScore)
   }    
