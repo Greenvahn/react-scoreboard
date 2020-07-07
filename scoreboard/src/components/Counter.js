@@ -1,20 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Consumer } from './Context';
 
-const Counter = ({index, score, updateScore, highScore}) => {
+const Counter = ({index}) => {
       return (
-        <div className="counter">
-          <button className="counter-action decrement" onClick={() => updateScore(index, -1, score, highScore)}> - </button>
-          <span className="counter-score">{ score }</span>
-          <button className="counter-action increment" onClick={() => updateScore(index, +1, score, highScore)}> + </button>
-        </div>
+        <Consumer>
+          {
+            ({actions, players}) => {
+              return (
+                <div className="counter">
+                <button className="counter-action decrement" onClick={() => actions.changeScore(index, -1, players[index].score, players.highScore)}> - </button>
+                <span className="counter-score">{ players[index].score }</span>
+                <button className="counter-action increment" onClick={() => actions.changeScore(index, +1, players[index].score, players.highScore)}> + </button>
+              </div>
+              )
+            }
+          }
+        </Consumer>
       );
   }
 
   Counter.propTypes = {
     index: PropTypes.number,
-    score: PropTypes.number,
-    updateScore: PropTypes.func
   }
 
   export default Counter;
