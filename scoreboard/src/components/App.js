@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './Header';
 import PlayerList from './PlayerList';
 import AddPlayerForm from './AddPlayerForm';
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <div className="scoreboard">
         <Header />
@@ -12,7 +11,6 @@ class App extends Component {
         <AddPlayerForm />
       </div>
     );
-  }
 }
 
 export default App;
