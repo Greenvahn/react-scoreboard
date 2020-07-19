@@ -69,10 +69,10 @@ export class Provider extends Component {
   reviewScore = (players) => {
     let maxScore = 0
     players.forEach(el => {
+      // eslint-disable-next-line
       el.score >= maxScore &&  el.score > 0 ? maxScore = el.score : maxScore;
     }); 
     return maxScore;
-    console.log("reviewScore", maxScore)
   }    
     render(){
         return (
