@@ -1,5 +1,4 @@
 .DS_Store
-node_modules
 /dist
 
 # local env files
@@ -21,3 +20,6 @@ yarn-error.log*
 *.sw?
 
 #node_modules
+node_modules
+yarn.lock
+package-lock.json
